@@ -28,7 +28,9 @@
 */
 
 // Code Here 
-
+function first (arr, cb){
+  cb(arr[0])
+}
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
@@ -48,7 +50,9 @@ first(names, function(firstName){
 */
 
 //Code Here
-
+function last (arr, cb){
+  cb(arr[arr.length -1])
+}
 // Do not edit the code below.
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
@@ -66,7 +70,9 @@ last(names, function(lastName){
 */
 
 //Code Here
-
+function multiply (num1, num2, cb){
+  cb (num1 * num2)
+}
 // Do not edit the code below.
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log 12
@@ -85,7 +91,13 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
-
+function contains (arr, name, cb){
+  if (arr.includes(name)){
+    cb (true);
+  }else {
+    cb (false);
+  }
+}
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
   if(result === true){
@@ -106,6 +118,16 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
+function uniq(names, cb) {
+  for (var i = 0; i < names.length; i++) {
+    for (var h = i + 1; h < names.length; h++) {
+      if (names[i] === names[h]) {
+        names.splice(h, 1)
+      }
+    }
+  }
+  cb(names);
+}
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -123,7 +145,11 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
-
+function each (arr, cb){
+  for (var i = 0; i < arr.length; i++){
+    cb(arr[i], i)
+  }
+}
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -140,6 +166,12 @@ each(names, function(item, indice){
 */
 
 // Code here
+function getUserById (users, id, cb){
+  for (var i = 0; i < users.length; i++){
+    if(users[i].id=== id)
+    cb(users[i])
+    }
+  }
 
 // Do not edit the code below.
 var users = [
